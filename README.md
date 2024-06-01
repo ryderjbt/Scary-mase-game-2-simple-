@@ -1,3 +1,4 @@
 # Scary-mase-game-2-simple-
 AHHHHH!
-by ryder!
+by poo poo boy, ryder smelly
+ergergerge
