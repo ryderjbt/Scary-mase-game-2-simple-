@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 610004054}
   - component: {fileID: 610004053}
   - component: {fileID: 610004052}
-  - component: {fileID: 610004051}
+  - component: {fileID: 610004056}
   m_Layer: 0
   m_Name: Gobber2
   m_TagString: Untagged
@@ -344,19 +344,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &610004051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610004050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19595c430766c7542986421e68cac78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!61 &610004052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -490,12 +477,25 @@ Transform:
   m_GameObject: {fileID: 610004050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: 0.02, z: 0}
+  m_LocalPosition: {x: -8.07, y: 3.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &610004056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610004050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19595c430766c7542986421e68cac78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &739439978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 1
+  m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -1598,8 +1598,8 @@ Tilemap:
   - first: {x: 4, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2161,26 +2161,26 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 89373c9ebd4ef2144985a0d7ae3da7d3, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: f72fb3d257c00dd4ebe063298b13cf27, type: 2}
-  - m_RefCount: 13
+  - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: e1b0cdda474a92441bf6ada0f6497a55, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e334425af17fb234ca467da1e01ac2bb, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 5e96a6c91e97e5f488de3a2f9416be46, type: 2}
-  - m_RefCount: 43
+  - m_RefCount: 42
     m_Data: {fileID: 11400000, guid: 67cb76e7786010a4ab260b942d3218c5, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: cc0df0c4501a218409ea26c71a1bf72d, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 5b8682fb899782947b9cfe48ff166f48, type: 3}
-  - m_RefCount: 13
+  - m_RefCount: 14
     m_Data: {fileID: 21300000, guid: 074db9bd9b5fa30488ebbdbfda7deb05, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 48d4b5b32fe4bb442b87ecd446eb40d9, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: 8590e5374d94a0c4fb8750a2869c6e3e, type: 3}
-  - m_RefCount: 43
+  - m_RefCount: 42
     m_Data: {fileID: 21300000, guid: 9f78c3e53eb52b744b3e33b5b2d41859, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 76
@@ -13798,6 +13798,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1427836839}
   - {fileID: 739439980}
+  - {fileID: 610004055}
   - {fileID: 950933077}
   - {fileID: 1118204519}
-  - {fileID: 610004055}

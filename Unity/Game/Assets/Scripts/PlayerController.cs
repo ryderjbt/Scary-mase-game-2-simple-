@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private 
-        //Rigidbody2D rb;
+        Rigidbody2D rb;
         Vector2 targetPos;
         bool moving;
         bool selected;
@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public
         float speed = 2f;
         static List<PlayerController> moveableTroops = new List<PlayerController>();
+        float XMovement;
+        float YMovement;
 
     private void Movement()
     {
@@ -23,8 +25,9 @@ public class PlayerController : MonoBehaviour
         }
         if(moving && (Vector2)transform.position != targetPos) // Makes sure object is moving and not at destiantion
         {
-            float step = speed * Time.deltaTime; // Makes sure speed is right for each computer
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, step); // Moves to target
+            XMovement = (targetPos.x - this.transform.position.x) * speed;
+            YMovement = (targetPos.y - this.transform.position.y) * speed;
+            rb.velocity = new Vector2(XMovement,YMovement);
         } else {
             moving = false; // If at target position stop moving
         }
@@ -32,16 +35,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        selected = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-
-        foreach(PlayerController obj in moveableTroops)
+        if (this.selected == true)
         {
-            if(obj != this)
-            {
-                obj.selected = false;
-                obj.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            }
+            this.selected = false;
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+        } else {
+            this.selected = true;
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 
@@ -49,8 +49,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         moveableTroops.Add(this);
+        this.selected = false;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
         targetPos = transform.position;
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
