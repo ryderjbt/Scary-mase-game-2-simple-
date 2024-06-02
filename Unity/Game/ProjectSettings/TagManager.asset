@@ -41,6 +41,9 @@ TagManager:
   - name: Ground
     uniqueID: 316647871
     locked: 0
+  - name: Collisions
+    uniqueID: 3368611201
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
