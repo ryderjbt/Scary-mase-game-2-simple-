@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 610004053}
   - component: {fileID: 610004052}
   - component: {fileID: 610004056}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gobber2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,9 +509,9 @@ GameObject:
   - component: {fileID: 739439982}
   - component: {fileID: 739439983}
   - component: {fileID: 739439984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gobber
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
