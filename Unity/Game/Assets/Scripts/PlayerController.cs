@@ -13,22 +13,23 @@ public class PlayerController : MonoBehaviour
     public
         float speed = 2f;
         static List<PlayerController> moveableTroops = new List<PlayerController>();
-        float XMovement;
-        float YMovement;
+        Vector2 clickMovement;
 
     private void Movement()
     {
         if(Input.GetMouseButtonDown(1) && selected) // If right click move to target // Maybe add array to take multiple inputs and loop through them sequentially
         {
+            rb.velocity = new Vector2(0,0);
+            moving = false;
             targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moving = true;
         }
         if(moving && (Vector2)transform.position != targetPos) // Makes sure object is moving and not at destiantion
         {
-            XMovement = (targetPos.x - this.transform.position.x) * speed;
-            YMovement = (targetPos.y - this.transform.position.y) * speed;
-            rb.velocity = new Vector2(XMovement,YMovement);
-        } else {
+            clickMovement = (targetPos - (Vector2)transform.position).normalized;
+            rb.velocity = (clickMovement) * speed; // Has jittering on location because may overlap target pos and then overadjusted
+        } else { // Need better way of checking destination has been reached so that rb.velocity can be set back to 0
+            rb.velocity = new Vector2(0,0); // Tried checking range like from player to location distance but did nothing dunno why
             moving = false; // If at target position stop moving
         }
     }
